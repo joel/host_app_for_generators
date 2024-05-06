@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-module TestUnit
+module BusinessLogic
   module Generators
-    class ActionGenerator < Rails::Generators::NamedBase
+    module Action
+      class TestUnitGenerator < Rails::Generators::NamedBase
 
-      source_root File.expand_path("templates", __dir__)
+        source_root File.expand_path("templates", __dir__)
 
-      def generate_files
-        template "action_test.rb.erb.tt", "test/actions/#{file_name}_test.rb"
+        def generate_files
+          template "action_test.rb.erb.tt", "test/actions/#{file_name}_test.rb"
+        end
       end
     end
   end
