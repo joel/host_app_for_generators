@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class FooAction < Rails::Generators::NamedBase
+class FooAction
 
   def perform
     # write the logic here
