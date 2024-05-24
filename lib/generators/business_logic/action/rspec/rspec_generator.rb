@@ -8,7 +8,7 @@ module BusinessLogic
         source_root File.expand_path("templates", __dir__)
 
         def generate_files
-          template "action_test.rb.erb.tt", "spec/actions/#{file_name}_spec.rb"
+          template "action_spec.rb.erb.tt", "spec/actions/#{file_name}_spec.rb"
         end
       end
     end
