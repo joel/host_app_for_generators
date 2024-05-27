@@ -13,6 +13,8 @@ module BusinessLogic
       hook_for :test_framework, in: "business_logic:schema"
 
       def generate_files
+        super
+
         template "schema.rb.erb.tt", "app/schemas/#{file_name}_schema.rb"
       end
 

@@ -12,10 +12,28 @@ module Parser
   end
 
   included do
+    class_option :component,        type: :string, desc: "Component type"
+    class_option :target_root_path, type: :string, desc: "Target Root Path", default: "app"
+
     argument :verb,   type: :string, default: 'create', desc: 'CRUD verb'
     argument :fields, type: :array,  default: [],       desc: 'field:type'
 
-    attr_reader :parsed_fields
+    attr_reader :parsed_fields, :root_file_path
+  end
+
+  def generate_files
+    @root_file_path = options[:target_root_path] # default: "app"
+
+    if options[:component]
+      case options[:target_root_path]
+      when "app"
+        @root_file_path = "app/components/#{options[:component]}"
+      when "test"
+        @root_file_path = "test/components/#{options[:component]}"
+      else
+        raise("Invalid target_root_path: #{options[:target_root_path]}")
+      end
+    end
   end
 
   private
