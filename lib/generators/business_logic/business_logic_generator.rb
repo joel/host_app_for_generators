@@ -60,8 +60,27 @@ module BusinessLogic
       DESC
 
       def invoke_generators
-        invoke "business_logic:action", [name, verb], options
         invoke "business_logic:schema", [name, verb, fields], options
+
+        operation_actions = %w[create update destroy]
+
+        if verb == "all"
+          operation_actions.each do |action|
+            # Thor like Rake (and Make) has task management, and prevent to invoke a task more than once.
+            reinvoke "business_logic:action", [name, action], options
+          end
+        else
+          verb.split(",").select { |v| operation_actions.include?(v) }.each do |action|
+            reinvoke "business_logic:action", [name, action], options
+          end
+        end
+      end
+
+      no_commands do
+        def reinvoke(task, args, options)
+          script = self.class.new(args, options)
+          script.invoke(task)
+        end
       end
 
     end

@@ -13,7 +13,7 @@ module BusinessLogic
       hook_for :test_framework, in: "business_logic:action"
 
       def generate_files
-        template "action.rb.erb.tt", "app/actions/#{file_name}_action.rb"
+        template "action.rb.erb.tt", "app/actions/#{verb}/#{file_name}_action.rb"
       end
 
     end

@@ -1,9 +1,11 @@
 # frozen_string_literal: true
 
-class <%= class_name %>Action
+module <%= verb.capitalize %>
+  class <%= class_name %>Action
 
-  def perform
-    # write the logic here
+    def perform
+      # write the logic here
+    end
+
   end
-
 end
