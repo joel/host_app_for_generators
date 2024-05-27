@@ -2,6 +2,6 @@
 
 class UserSchema
 
-    attr_writer :name
+    attr_writer :name, :email
 
 end
