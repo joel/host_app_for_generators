@@ -27,3 +27,6 @@ group :development do
   # gem "spring"
 end
 
+gem "action_generator", git: "git@github.com:joel/action_generator.git", require: false
+gem "action_generator_test_unit", git: "git@github.com:joel/action_generator_test_unit.git", require: false
+gem "action_generator_rspec", git: "git@github.com:joel/action_generator_rspec.git", require: false
