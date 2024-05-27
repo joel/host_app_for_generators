@@ -30,6 +30,21 @@
 #   business_logic:schema
 #   business_logic:schema:test_unit
 
+# NOTE: You might want to name the generator as scaffold_generator.rb
+
+# rails g --help
+
+# BusinessLogic:
+#   business_logic:scaffold
+#   business_logic:action
+#   business_logic:action:test_unit
+#   business_logic:schema
+#   business_logic:schema:test_unit
+
+# rails generate business_logic:scaffold User create name:string email:string --test_framework=test_unit --force
+
+# For that change the name of the class and the file to scaffold_generator.rb
+
 require_relative "../parser"
 
 module BusinessLogic
