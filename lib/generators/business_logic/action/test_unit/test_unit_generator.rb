@@ -12,7 +12,7 @@ module BusinessLogic
         source_root File.expand_path("templates", __dir__)
 
         def generate_files
-          template "action_test.rb.erb.tt", "test/actions/#{file_name}_test.rb"
+          template "action_test.rb.erb.tt", "test/actions/#{verb}/#{file_name}_test.rb"
         end
       end
     end

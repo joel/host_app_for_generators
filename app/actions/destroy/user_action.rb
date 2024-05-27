@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module <%= verb.capitalize %>
-  class <%= class_name %>Action
+module Destroy
+  class UserAction
 
     def perform
       # write the logic here

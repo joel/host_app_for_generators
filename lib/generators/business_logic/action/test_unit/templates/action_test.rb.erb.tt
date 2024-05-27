@@ -1,7 +1,9 @@
 require "test_helper"
 
-class <%= class_name %>ActionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+module <%= verb.capitalize %>
+  class <%= class_name %>ActionTest < ActiveSupport::TestCase
+    # test "the truth" do
+    #   assert true
+    # end
+  end
 end
