@@ -5,8 +5,8 @@ class <%= class_name %>SchemaTest < ActiveSupport::TestCase
   #   assert true
   # end
 
-<%- if @parsed_fields.any? -%>
-<%- @parsed_fields.map do |field| -%>
+<%- if parsed_fields.any? -%>
+<%- parsed_fields.map do |field| -%>
   test "the truth for the <%= field.type %> attribute <%= field.name  %>" do
     assert true
   end
