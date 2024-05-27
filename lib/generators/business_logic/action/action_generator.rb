@@ -1,8 +1,12 @@
 # frozen_string_literal: true
 
+require_relative "../../parser"
+
 module BusinessLogic
   module Generators
     class ActionGenerator < Rails::Generators::NamedBase
+
+      include Parser
 
       source_root File.expand_path("templates", __dir__)
 
