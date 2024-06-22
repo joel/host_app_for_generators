@@ -1,0 +1,9 @@
+# frozen_string_literal: true
+
+class <%= class_name %>Schema
+
+  <%- if parsed_fields.any? -%>
+    attr_writer <%=  parsed_fields.map { |field| ":#{field.name}" }.join(", ") %>
+  <%- end -%>
+
+end
